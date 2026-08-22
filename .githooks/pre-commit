@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+# Refuse a commit whose agent files have drifted from agent-blocks/.
+#
+# Catches the failure this mechanism exists to prevent: text hand-edited inside
+# a <!-- begin: ... --> region, which the next rebuild would silently discard.
+set -euo pipefail
+
+repo_root="$(git rev-parse --show-toplevel)"
+builder="${repo_root}/agent-blocks/build_agents.py"
+
+[[ -f "${builder}" ]] || exit 0
+
+if ! python3 "${builder}" --check; then
+    cat >&2 <<'EOF'
+
+pre-commit: agent files are out of sync with agent-blocks/.
+
+  Shared text was edited in an agent file instead of its block, or a block
+  changed without a rebuild. Fix with:
+
+      python3 ~/.claude/agent-blocks/build_agents.py
+      git add -u
+
+  Never edit text inside a <!-- begin: ... --> / <!-- end: ... --> region.
+EOF
+    exit 1
+fi

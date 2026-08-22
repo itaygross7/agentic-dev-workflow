@@ -1,0 +1,38 @@
+# Secrets — never commit
+.credentials.json
+.claude.json
+policy-limits.json
+remote-settings.json
+stats-cache.json
+history.jsonl
+settings.local.json
+
+# Bulk / reinstallable / machine-local
+plugins/
+file-history/
+cache/
+shell-snapshots/
+paste-cache/
+session-env/
+sessions/
+downloads/
+backups/
+debug/
+ide/
+jobs/
+daemon/
+daemon.lock
+daemon.log
+daemon.status.json
+.last-cleanup
+.last-update-result.json
+
+# Session transcripts are huge; keep only the durable memory under projects/
+projects/**
+!projects/
+!projects/*/
+!projects/*/memory/
+!projects/*/memory/**
+
+# IDE
+.idea/
