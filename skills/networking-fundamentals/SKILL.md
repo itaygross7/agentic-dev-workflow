@@ -5,7 +5,7 @@ description: Diagnose connectivity failures — "connection refused/timed out", 
 
 # Networking Fundamentals Skill
 
-Use when reasoning about network architecture or diagnosing connectivity, latency, or TLS issues — not for routine HTTP client code (see `networking-security`).
+Use when reasoning about network architecture or diagnosing connectivity, latency, or TLS issues — not for routine HTTP client code (see `~/.claude/rules/networking-security.md`).
 
 ## Reference model
 - **Layers (simplified TCP/IP)**: Link (Ethernet/Wi-Fi) -> Internet (IP, routing) -> Transport (TCP: reliable/ordered; UDP: unreliable/fast) -> Application (HTTP, DNS; TLS sits between Transport and Application).

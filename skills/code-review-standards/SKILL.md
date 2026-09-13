@@ -7,7 +7,7 @@ description: "Review-time priority order and severity flagging for Python change
 
 Governs review-time flagging only: GitHub's automated PR code-review bot, and the `code-reviewer`
 agent (which references this file instead of restating it). During normal authoring, follow
-`python-conventions`/`code-quality` — this file's role is judging already-written
+`~/.claude/rules/python-conventions.md`/`code-quality` — this file's role is judging already-written
 diffs, not producing new code.
 
 ## Review priority

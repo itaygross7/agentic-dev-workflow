@@ -21,6 +21,7 @@ is unchanged** by the mechanism.
 | `reads-lead.md` | 4 | 7 | Team Lead Mode owns the one shared `junior-dev`; forward its brief, read the judged artifact yourself |
 | `team-lead-mode.md` | 8 | 7 | Decompose, route via `agent-routing`, spawn read-only tiers directly, checkpoint action-capable ones |
 | `reads-consumer.md` | 2 | 6 | Don't self-read in bulk; a brief is orientation, not the artifact you're judging |
+| `loop-mode.md` | 12 | 7 | `[LOOP MODE]` bounded pre-auth: lead may spawn `code-improver` uncheckpointed, capped at 3 iterations with churn/divergence exits |
 
 ## Workflow
 

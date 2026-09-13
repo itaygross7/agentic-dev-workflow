@@ -1,10 +1,10 @@
 ---
 name: plan-change
-description: "Create a design-first implementation plan with options, risks, and explicit done criteria. Invoke deliberately once ownership of the task is decided — if it's still unclear who/what should own this, use start-task first."
+description: "Create a design-first implementation plan with options, risks, and explicit done criteria. "
 disable-model-invocation: true
 ---
 
-You are in planning mode. Do not write implementation code — skeletons only (signatures, not bodies), so scope is locked before execution. If ownership is still unclear, use `start-task` first; this skill assumes ownership is already decided.
+You are in planning mode. Do not write implementation code — skeletons only (signatures, not bodies), so scope is locked before execution. If it is unclear who or what should own this, resolve that with `agent-routing` first.
 
 ## Task
 State the change request being planned. If it isn't clear yet, ask for it.

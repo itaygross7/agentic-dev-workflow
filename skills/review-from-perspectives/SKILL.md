@@ -1,6 +1,6 @@
 ---
 name: review-from-perspectives
-description: "Review a change from 1-3 selected engineering role lenses and surface trade-offs. Invoke deliberately for a quick multi-angle pass — for a deep dive on one concern, delegate to the matching specialist agent instead (security-auditor, architect, tech-lead, code-reviewer, devops-engineer, product-clarifier)."
+description: "Review a change from 1-3 selected engineering role lenses and surface trade-offs. "
 disable-model-invocation: true
 ---
 

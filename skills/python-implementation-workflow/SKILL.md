@@ -1,6 +1,6 @@
 ---
 name: python-implementation-workflow
-description: Execute a Python change request ("implement/change/fix X" in a .py file) through lock -> stage -> verify -> report with strict scope control, once ownership of the task is decided. NOT for non-Python changes (use disciplined-change-workflow) or a single-line trivial edit.
+description: Execute a Python change end to end — lock the scope, stage the edit, verify it runs, report what changed — for prompts like "implement X", "add this to <file>.py", "change how Y works", "fix this function". Keeps the change inside the stated scope and refuses silent extras. NOT for non-Python files (use disciplined-change-workflow), a one-line trivial edit, or an undiagnosed bug (investigate first).
 ---
 
 # Python Implementation Workflow Skill

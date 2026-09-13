@@ -9,10 +9,10 @@ Use before writing any crawler/scraper code, not just when editing an existing o
 
 ## Workflow
 1. **Check for a legit alternative and permission first**
-   - Apply `web-crawling-conventions`'s legal/ethical and politeness rules: official API check, robots.txt, ToS, identifiable User-Agent, and rate limits.
+   - Apply `~/.claude/rules/web-crawling-conventions.md`'s legal/ethical and politeness rules: official API check, robots.txt, ToS, identifiable User-Agent, and rate limits.
    - Stop and flag the task if scraping looks disallowed or legally ambiguous.
 2. **Choose the right tool for the scale**
-   - Per `web-crawling-conventions`'s tool-selection rule, choose `requests`/`httpx` + parser, `scrapy`, or `playwright` (JS-only, last resort) for the actual scale and JS requirement.
+   - Per `~/.claude/rules/web-crawling-conventions.md`'s tool-selection rule, choose `requests`/`httpx` + parser, `scrapy`, or `playwright` (JS-only, last resort) for the actual scale and JS requirement.
 3. **Implement incrementally**
    - Build the fetch layer first (timeouts, TLS verify, retries) and verify it against a couple of real pages.
    - Add parsing/extraction next, verified against saved sample HTML rather than live re-fetching in tests.

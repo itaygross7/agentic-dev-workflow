@@ -57,10 +57,13 @@ nested ifs; Pydantic for JSON payloads; HTTPStatus enums; no getattr; no
 module-level mutable globals; path-traversal protection; single responsibility.
 
 ## How this setup is organized
-- Path-specific conventions (python, api, mongodb, aws, …) load automatically
-  as skills based on topic/keyword matching in the conversation — there is no
-  literal file-path-based trigger mechanism, so their descriptions are what
-  actually does the work.
+- Path-specific conventions (python, api, mongodb, aws, …) are path-scoped
+  rules in `~/.claude/rules/`, not skills. Each has a `paths:` glob and loads
+  only when Claude reads a matching file — every repo, present and future, no
+  per-repo setup. Verified 2026-09-06 on 2.1.263 by probe; open issues #21858
+  and #22170 claim user-level `paths:` is ignored, which was not true here. If
+  conventions stop loading, re-run that probe before assuming anything else.
+  Multi-step workflows stay skills.
 - Workflows (planning, bug-fix, review, tests, …) are skills.
 - Specialist roles (reviewer, investigator, security-auditor, …) are subagents.
 Do not restate a skill's content here — this file stays minimal on purpose.

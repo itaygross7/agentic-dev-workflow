@@ -9,7 +9,14 @@
       "Edit(**/*.pem)",
       "Edit(**/id_rsa*)",
       "Bash(git push --force*)",
-      "Bash(git push -f*)"
+      "Bash(git push -f*)",
+      "Edit(~/.claude/agents/**)",
+      "Edit(~/.claude/agent-blocks/**)",
+      "Edit(~/.claude/settings.json)",
+      "Edit(~/.claude/settings.local.json)",
+      "Edit(~/.claude/hooks/**)",
+      "Edit(**/.git/config)",
+      "Bash(git reset --hard*)"
     ]
   },
   "hooks": {
@@ -20,6 +27,27 @@
           {
             "type": "command",
             "command": "bash \"$HOME/.claude/hooks/format-python.sh\""
+          }
+        ]
+      }
+    ],
+    "InstructionsLoaded": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"$HOME/.claude/hooks/log-instructions-loaded.sh\""
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Skill",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"$HOME/.claude/hooks/log-skill-use.sh\""
           }
         ]
       }

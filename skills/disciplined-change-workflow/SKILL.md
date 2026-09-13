@@ -1,11 +1,11 @@
 ---
 name: disciplined-change-workflow
-description: Lock, classify, conform, stage, verify, and report a multi-step code or config change in any non-Python context — scripts, CI/CD config, infra-as-code, SQL, Dockerfiles. NOT for Python application code (use python-implementation-workflow) or a single-line trivial edit. Invoke once ownership of the task is decided — if it's still unclear who/what should own this, use start-task first.
+description: Execute a multi-step change to non-Python files — shell scripts, CI/CD YAML, Dockerfiles, Terraform, SQL — through lock, classify, conform, stage, verify, report. Triggers on "update the pipeline", "change the Dockerfile", "edit this script", "add a migration". NOT for Python application code (use python-implementation-workflow) or a single-line edit.
 ---
 
 # Disciplined Change Workflow Skill
 
-Language-agnostic execution discipline for non-trivial changes. `python-implementation-workflow` specializes this for Python; use this skill for bash, YAML/CI config, Dockerfiles, SQL, and infra-as-code. If ownership is still unclear, use `start-task` first; this skill assumes ownership is already decided.
+Language-agnostic execution discipline for non-trivial changes. `python-implementation-workflow` specializes this for Python; use this skill for bash, YAML/CI config, Dockerfiles, SQL, and infra-as-code. If it is unclear who or what should own this, resolve that with `agent-routing` first.
 
 ## Workflow
 1. **Lock the task**
@@ -13,7 +13,7 @@ Language-agnostic execution discipline for non-trivial changes. `python-implemen
    - Confirm scope boundaries (files/contracts that must stay stable).
    - If the exact file(s), entry point, or shared contract is unknown, stop and ask instead of guessing.
 2. **Classify the change**
-   - No change: "why"/"investigate"/"is this correct" -> use `direct-answer-mode` or `bug-investigator`.
+   - No change: "why"/"investigate"/"is this correct" -> use answering directly in-session (no agent) or `bug-investigator`.
    - Surgical: exact failure point only; no rename, reformat, or drive-by edits.
    - Surgical+ (improvement): one qualifying concern, no interface/behavior change.
    - Targeted: bounded feature/change using existing patterns.
