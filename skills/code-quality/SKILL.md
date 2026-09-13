@@ -5,7 +5,7 @@ description: "Function/class-level Python design rules: one abstraction level pe
 
 # Code quality rules (scoped)
 
-Apply when writing or reviewing Python code. Complements `python-conventions`
+Apply when writing or reviewing Python code. Complements `~/.claude/rules/python-conventions.md`
 (contracts/error-handling/logging) with function/class-level design rules.
 
 ## One level of abstraction per function
@@ -53,7 +53,7 @@ Apply when writing or reviewing Python code. Complements `python-conventions`
 
 ## Common anti-patterns to avoid
 Error-handling anti-patterns (exception swallowing, returning `None`/a sentinel to signal
-failure) are covered in `python-conventions` and not repeated here — this list is
+failure) are covered in `~/.claude/rules/python-conventions.md` and not repeated here — this list is
 function/class-design specific:
 - **Fake encapsulation**: a private method called exactly once that adds no abstraction
   over what the caller already implies — inline it instead.

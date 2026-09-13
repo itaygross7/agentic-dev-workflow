@@ -17,7 +17,7 @@ Use when changing how code is built, tested, deployed, or observed — not appli
 4. **Design the secrets path first**
    - Secrets come from a secret manager/CI secret store at runtime — never hardcoded, logged, or baked into an image layer.
 5. **Scope deployment credentials to least privilege**
-   - Prefer short-lived/OIDC-based credentials over long-lived static ones (see `aws-conventions` for AWS).
+   - Prefer short-lived/OIDC-based credentials over long-lived static ones (see `~/.claude/rules/aws-conventions.md` for AWS).
 6. **Design rollback with deploy**
    - Every deploy change needs a fast rollback path (previous image tag, reversible migration).
 7. **Add observability before calling it done**

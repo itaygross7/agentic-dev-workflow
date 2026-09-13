@@ -1,30 +1,24 @@
 ---
 name: agent-routing
-description: Situation map for which agent (or none) fits a task — checked before escalating to a specialist, and answers "which agents do I have" / "which agent fits now".
+description: Pick the right specialist agent for a task, or decide none is needed — answers "which agent should handle this", "which agents do I have", "who is best for this". Also defines the read-only vs action-capable tiers and the one-junior-dev read rule. NOT for resuming or retiring an agent already spawned (use agent-lifecycle), and NOT for deviating from an agent step an approved plan already named.
 ---
 
 # Agent routing situation map
 
-Explicit commands built on this map: `/list-agents` (prints the roster
-below), `/suggest-agent` (states the best fit, launches nothing),
-`/agent-info <agent>` (explains one agent and whether it fits now, launches
-nothing), `/consult` (states the best fit and launches it), `/consult
-<agent>` (validates the name, then launches it).
+Explicit commands built on this map: `/consult` (states the best fit and
+launches it) and `/consult <agent>` (validates the name, then launches it).
+`/consult` also carries a per-agent table of what each one needs from you.
 
-Every specialist agent also has its own same-named direct-launch command
-(`/architect`, `/bug-fixer`, `/bug-investigator`, `/code-creator`,
-`/code-improver`, `/code-reviewer`, `/senior-dev`, `/tech-lead`,
-`/security-auditor`, `/devops-engineer`, `/product-clarifier`,
-`/test-writer`, `/tune-skills`) — the token-cheapest way to run one:
-no `agent-routing` lookup, no fit-check, no confirmation, just launch with
-the rest of the command as its task. Use these when you already know which
-agent you want; use `/consult` (unnamed) or this map when you don't.
+The twelve same-named direct-launch commands (`/architect`, `/bug-fixer`, …)
+were retired on 2026-09-06 — none had ever been used, and two doors to the
+same confirmation exemption already existed: naming the agent in prose
+("`senior-dev`: check this"), which CLAUDE.md already treats as go-ahead, and
+`/consult <agent>`. `/tune-skills` survives as a real command, not a wrapper.
 
-`/team <message>` and `/team-custom <lead-agent> <message>` talk to a
-persistent team lead instead of one agent at a time — the lead (`senior-dev`
-by default, or any of `architect`, `tech-lead`, `code-reviewer`,
-`bug-investigator`, `security-auditor`, `product-clarifier` via
-`/team-custom`) decomposes the task, spawns whichever specialists it needs
+`/team [--lead <agent>] <message>` talks to a persistent team lead instead of
+one agent at a time — the lead (`senior-dev` by default, or any of `architect`,
+`tech-lead`, `code-reviewer`, `bug-investigator`, `security-auditor`,
+`product-clarifier` via `--lead`) decomposes the task, spawns whichever specialists it needs
 per this map, and owns the one shared `junior-dev` for the whole team — the
 lead briefs it, consolidates what comes back, and fans that out to the
 specialists. Continuing the conversation resumes the same lead rather than

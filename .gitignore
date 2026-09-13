@@ -36,3 +36,8 @@ projects/**
 
 # IDE
 .idea/
+
+# Runtime logs written by hooks — grow every session
+instructions-loaded.log
+skill-use.log
+telemetry/

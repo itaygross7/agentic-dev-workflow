@@ -5,7 +5,7 @@ description: Lock the contract (resource, verb, path, request/response schema, s
 
 # API Endpoint Design Workflow Skill
 
-Use when adding a new REST endpoint or materially changing an existing contract. It complements `api-rest-conventions` (enforceable rules) and `python-implementation-workflow` (general Python execution process).
+Use when adding a new REST endpoint or materially changing an existing contract. It complements `~/.claude/rules/api-rest-conventions.md` (enforceable rules) and `python-implementation-workflow` (general Python execution process).
 
 ## Workflow
 1. **Lock the contract**
@@ -17,7 +17,7 @@ Use when adding a new REST endpoint or materially changing an existing contract.
    - Decide exact status codes and error-envelope shapes for not-found, validation failure, auth/authz failure, pagination bounds, and idempotent retry for POST.
 4. **Implement in order**
    - Request schema/validation at the boundary -> service call -> response schema/serialization -> error mapping.
-   - Keep validation at the boundary (per `security-boundaries`); do not push raw untrusted input into service/domain logic.
+   - Keep validation at the boundary (per `~/.claude/rules/security-boundaries.md`); do not push raw untrusted input into service/domain logic.
 5. **Verify**
    - Add or extend tests for happy path, each validation failure, auth failure, and pagination/edge bounds (per `testing-conventions`).
    - Manually exercise the endpoint (`curl`/httpie) to confirm the actual response shape matches the design.

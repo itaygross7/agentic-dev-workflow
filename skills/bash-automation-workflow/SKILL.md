@@ -12,7 +12,7 @@ Use before writing a new shell script or automating a repeatable operation (depl
    - Good fit: file/process orchestration, gluing CLI tools, short-lived ops tasks.
    - Poor fit: work needing real data structures, deep error handling, or reuse across services — prefer Python.
 2. **Scaffold with safety on by default**
-   - Apply `bash-scripting-conventions` from line 1: shebang, `set -euo pipefail`, `trap` cleanup, `mktemp` for temp files, upfront argument validation.
+   - Apply `~/.claude/rules/bash-scripting-conventions.md` from line 1: shebang, `set -euo pipefail`, `trap` cleanup, `mktemp` for temp files, upfront argument validation.
 3. **Structure before logic**
    - Use small functions plus `main "$@"` even when the script looks tiny.
 4. **Validate as you go**

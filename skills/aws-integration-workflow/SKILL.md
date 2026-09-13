@@ -13,7 +13,7 @@ Use when adding a new AWS service call (S3, SQS, DynamoDB, etc.) or changing how
    - Write the least-privilege policy statement down; don't start with a wildcard and promise to tighten it later.
 2. **Build the client once, with explicit resilience config**
    - Reuse one client/resource per service per process; never recreate one per call.
-   - Set explicit `Config(retries={...}, connect_timeout=, read_timeout=)` per `aws-conventions`; never rely on undocumented SDK defaults.
+   - Set explicit `Config(retries={...}, connect_timeout=, read_timeout=)` per `~/.claude/rules/aws-conventions.md`; never rely on undocumented SDK defaults.
 3. **Handle pagination and partial failure explicitly**
    - Use the built-in paginator for list/describe calls.
    - For batch operations, handle partial failures in the response; HTTP success does not mean every item succeeded.

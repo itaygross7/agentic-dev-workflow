@@ -1,6 +1,6 @@
 ---
 name: fix-bug
-description: "Diagnose then fix a known bug with the smallest safe change (minimal vs defensive option). Invoke deliberately once the root cause is known — not for open-ended investigation, use investigate-bug for that."
+description: "Diagnose then fix a known bug with the smallest safe change (minimal vs defensive option). "
 disable-model-invocation: true
 ---
 

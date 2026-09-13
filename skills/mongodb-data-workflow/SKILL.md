@@ -12,10 +12,10 @@ Use when adding a collection, a new query/sort pattern, or a document-shape chan
    - Write the queries before shaping the document; Mongo schema design is query-driven, not relational normalization.
    - Decide embed vs. reference: embed data always read together and bounded in size; reference data that's large, unbounded, or updated independently.
 2. **Lock the index with the query**
-   - Every new query/sort pattern gets its supporting index in the same step — see `mongodb-conventions` for connection/index rules.
+   - Every new query/sort pattern gets its supporting index in the same step — see `~/.claude/rules/mongodb-conventions.md` for connection/index rules.
    - Check `explain()` to confirm index use rather than a collection scan.
 3. **Validate boundaries**
-   - `ObjectId` and any user-supplied filter must be validated/coerced at the boundary (per `security-boundaries`) before reaching a query.
+   - `ObjectId` and any user-supplied filter must be validated/coerced at the boundary (per `~/.claude/rules/security-boundaries.md`) before reaching a query.
 4. **Plan schema evolution as additive**
    - New fields are optional/additive by default; a breaking shape change needs an explicit idempotent backfill script.
 5. **Implement in order**

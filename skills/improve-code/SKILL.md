@@ -1,6 +1,6 @@
 ---
 name: improve-code
-description: "Propose a targeted, justified improvement to existing code without changing behavior or interfaces. Invoke deliberately for a single qualifying improvement — not for open-ended refactors or unrequested cleanup."
+description: "Propose a targeted, justified improvement to existing code without changing behavior or interfaces. "
 disable-model-invocation: true
 ---
 
